@@ -1,746 +1,1087 @@
-<!-- <!DOCTYPE html> -->
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ahmad Gozali — Web Developer</title>
+<meta name="description" content="Ahmad Gozali, Programmer / Web Developer berbasis di Bekasi. Berpengalaman membangun sistem ERP, integrasi API, dan aplikasi web." />
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
-  <!-- End Google Tag Manager -->
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:        #0F1413;
+    --bg-raised: #141B19;
+    --line:      #1F2926;
+    --line-soft: #182220;
+    --text:      #E8ECEA;
+    --text-dim:  #94A19D;
+    --text-faint:#5B6663;
+    --accent:    #15C9A4;
+    --accent-dim:#0E8D72;
+    --amber:     #D98E3B;
+    --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --maxw: 760px;
+  }
 
-  <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles-->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Ahmad Gozali | Web Developer</title>
+  @font-face{
+    font-family:'JetBrains Mono';
+    src:local('JetBrains Mono');
+  }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126939217-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent); color:#06150F; }
 
-    gtag('config', 'UA-126939217-2');
-  </script>
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
 
-  <!-- Open Graph-->
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ahmad Gozali | Web Developer" />
-  <meta property="og:description" content="Web Developer" />
-  <meta property="og:url" content="https://gozali21.github.io/" />
-  <meta property="og:site_name" content="Ahmad Gozali | Web Developer" />
-  <meta property="article:publisher" content="https://gozali21.github.io/" />
-  <!-- Twitter -->
-  <meta name="description" content="Software Developer with a passion for backend development and artificial intelligence." />
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="assets/img/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#ffffff" />
-  <meta name="robots" content="index, follow" />
-  <!-- Google Site Verification for indexing -->
-  <meta name="google-site-verification" content="_qxK8tePiU2fhnwlwnJ7pkDFnj1k2EiKq_cYGy1Cb84" />
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* visually-hidden for a11y skip link */
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--accent); color:#06150F; padding:8px 14px; z-index:999;
+  }
+  .skip-link:focus{ left:12px; top:12px; }
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ============ TOP NAV ============ */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(15,20,19,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:14px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .nav-brand{
+    font-family:var(--mono);
+    font-size:14px;
+    color:var(--text);
+    letter-spacing:0.02em;
+  }
+  .nav-brand .dot{ color:var(--accent); }
+  nav.links{ display:flex; gap:22px; }
+  nav.links a{
+    color:var(--text-dim);
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.02em;
+  }
+  nav.links a:hover{ color:var(--accent); text-decoration:none; }
+  nav.links a.active{ color:var(--accent); }
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--line);
+    color:var(--text);
+    width:36px; height:36px;
+    border-radius:6px;
+    cursor:pointer;
+    font-family:var(--mono);
+  }
+
+  @media (max-width:640px){
+    nav.links{
+      position:absolute;
+      top:100%; left:0; right:0;
+      flex-direction:column;
+      background:var(--bg-raised);
+      border-bottom:1px solid var(--line);
+      padding:14px 24px;
+      gap:14px;
+      display:none;
+    }
+    nav.links.open{ display:flex; }
+    .nav-toggle{ display:block; }
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    padding:64px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--accent);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px rgba(21,201,164,0.18);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 3px rgba(21,201,164,0.18); }
+    50%{ box-shadow:0 0 0 6px rgba(21,201,164,0.06); }
+  }
+
+  /* terminal window */
+  .terminal{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .term-bar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    background:#111715;
+  }
+  .term-dot{ width:11px; height:11px; border-radius:50%; }
+  .term-dot.r{ background:#FF5F57; }
+  .term-dot.y{ background:#FEBC2E; }
+  .term-dot.g{ background:#28C840; }
+  .term-title{
+    margin-left:8px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .term-body{
+    padding:28px 26px 30px;
+    font-family:var(--mono);
+  }
+  .term-line-prompt{
+    color:var(--text-faint);
+    font-size:14px;
+  }
+  .term-line-prompt .arrow{ color:var(--accent-dim); }
+
+  h1.title{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:clamp(28px, 5.4vw, 42px);
+    line-height:1.25;
+    margin:10px 0 4px;
+    letter-spacing:-0.01em;
+  }
+  h1.title .who{ color:var(--text); }
+  h1.title .accent{ color:var(--accent); }
+
+  .role-line{
+    font-family:var(--mono);
+    font-size:clamp(15px,2.6vw,18px);
+    color:var(--text-dim);
+    margin:6px 0 22px;
+    min-height:24px;
+  }
+  .role-line .caret{
+    display:inline-block;
+    width:9px; height:1.1em;
+    background:var(--accent);
+    margin-left:2px;
+    vertical-align:-2px;
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .hero-summary{
+    font-size:15px;
+    color:var(--text-dim);
+    max-width:560px;
+    margin:0 0 26px;
+  }
+
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+  }
+  .btn{
+    font-family:var(--mono);
+    font-size:13.5px;
+    padding:11px 20px;
+    border-radius:7px;
+    border:1px solid var(--line);
+    cursor:pointer;
+    transition:all .18s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#06150F;
+    border-color:var(--accent);
+    font-weight:600;
+  }
+  .btn-primary:hover{
+    background:#1FE0B7;
+    text-decoration:none;
+    transform:translateY(-1px);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--text);
+  }
+  .btn-ghost:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+    text-decoration:none;
+  }
+
+  .hero-socials{
+    display:flex;
+    gap:14px;
+    margin-top:22px;
+  }
+  .hero-socials a{
+    color:var(--text-dim);
+    width:36px; height:36px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all .18s ease;
+  }
+  .hero-socials a:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+    text-decoration:none;
+  }
+  .hero-socials svg{ width:17px; height:17px; }
+
+  /* ============ SECTION SHELL ============ */
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:70px;
+  }
+  section:last-of-type{ border-bottom:none; }
+
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:34px;
+  }
+  .sec-num{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--accent-dim);
+  }
+  .sec-title{
+    font-family:var(--mono);
+    font-size:22px;
+    font-weight:700;
+    color:var(--text);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .sec-rule{
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  /* ============ ABOUT ============ */
+  .about-text p{
+    color:var(--text-dim);
+    font-size:15.5px;
+    margin:0 0 16px;
+  }
+  .about-text strong{ color:var(--text); }
+
+  .stack-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px 28px;
+    margin-top:24px;
+  }
+  .stack-row{
+    display:flex;
+    gap:10px;
+    font-size:14px;
+    padding:8px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .stack-row .k{
+    font-family:var(--mono);
+    color:var(--accent-dim);
+    min-width:96px;
+    flex-shrink:0;
+  }
+  .stack-row .v{ color:var(--text-dim); }
+  @media (max-width:560px){
+    .stack-grid{ grid-template-columns:1fr; }
+  }
+
+  .status-line{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-faint);
+    margin-top:28px;
+    padding:14px 16px;
+    border:1px dashed var(--line);
+    border-radius:8px;
+    background:rgba(21,201,164,0.03);
+  }
+  .status-line .ok{ color:var(--accent); }
+
+  /* ============ EXPERIENCE ============ */
+  .timeline{ position:relative; }
+  .job{
+    position:relative;
+    padding-left:26px;
+    padding-bottom:34px;
+    border-left:1px solid var(--line);
+  }
+  .job:last-child{ padding-bottom:0; }
+  .job::before{
+    content:'';
+    position:absolute;
+    left:-5px; top:4px;
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--bg);
+  }
+  .job-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:4px;
+  }
+  .job-role{
+    font-weight:600;
+    color:var(--text);
+    font-size:16.5px;
+  }
+  .job-period{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--text-faint);
+    white-space:nowrap;
+  }
+  .job-org{
+    color:var(--accent);
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .job ul{
+    margin:0;
+    padding-left:18px;
+    color:var(--text-dim);
+    font-size:14.5px;
+  }
+  .job ul li{ margin-bottom:7px; }
+  .job .tools{
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .job .tools span{
+    display:inline-block;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:3px 8px;
+    margin:3px 4px 0 0;
+    color:var(--text-dim);
+  }
+
+  /* ============ PROJECTS ============ */
+  .proj-list{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .proj{
+    padding:24px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .proj:last-child{ border-bottom:none; padding-bottom:0; }
+  .proj:first-child{ padding-top:0; }
+  .proj-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:14px;
+    cursor:pointer;
+  }
+  .proj-name{
+    font-weight:600;
+    font-size:16.5px;
+    color:var(--text);
+    margin:0 0 4px;
+  }
+  .proj-desc{
+    color:var(--text-dim);
+    font-size:14.5px;
+    margin:0;
+  }
+  .proj-toggle{
+    font-family:var(--mono);
+    color:var(--text-faint);
+    font-size:13px;
+    flex-shrink:0;
+    margin-top:2px;
+    transition:transform .2s ease;
+    user-select:none;
+  }
+  .proj.open .proj-toggle{ transform:rotate(45deg); color:var(--accent); }
+
+  .proj-details{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .28s ease;
+  }
+  .proj.open .proj-details{ max-height:400px; }
+  .proj-details-inner{
+    padding-top:16px;
+  }
+  .proj-details ul{
+    margin:0 0 10px;
+    padding-left:18px;
+    color:var(--text-dim);
+    font-size:14px;
+  }
+  .proj-details ul li{ margin-bottom:6px; }
+  .proj-tools{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+  .proj-tools span{
+    display:inline-block;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:3px 8px;
+    margin:3px 4px 0 0;
+    color:var(--text-dim);
+  }
+
+  /* ============ SKILLS ============ */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+    gap:14px;
+  }
+  .skill-card{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px;
+  }
+  .skill-card h4{
+    font-family:var(--mono);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--accent-dim);
+    margin:0 0 12px;
+    font-weight:600;
+  }
+  .skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .skill-tags span{
+    font-size:13px;
+    color:var(--text-dim);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:5px 9px;
+  }
+
+  /* ============ EDUCATION ============ */
+  .edu-card{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px 22px;
+    margin-bottom:14px;
+  }
+  .edu-card:last-child{ margin-bottom:0; }
+  .edu-school{
+    font-weight:600;
+    font-size:16px;
+    color:var(--text);
+  }
+  .edu-loc{
+    color:var(--text-faint);
+    font-size:13px;
+    margin:2px 0 10px;
+  }
+  .edu-meta{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--text-dim);
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .edu-meta b{ color:var(--text-faint); font-weight:500; }
+
+  /* ============ CONTACT ============ */
+  .contact-grid{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .contact-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .contact-row:last-child{ border-bottom:none; }
+  .contact-icon{
+    width:38px; height:38px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--accent);
+    flex-shrink:0;
+  }
+  .contact-icon svg{ width:18px; height:18px; }
+  .contact-label{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--text-faint);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:2px;
+  }
+  .contact-value{
+    color:var(--text);
+    font-size:15px;
+  }
+  .contact-value a{ color:var(--text); }
+  .contact-value a:hover{ color:var(--accent); }
+
+  .contact-cta{
+    margin-top:30px;
+    text-align:center;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    padding:30px 0 50px;
+    text-align:center;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--text-faint);
+  }
+
+  /* fade-in on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
 </head>
-
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGZH8HT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  
-  <!-- Navigation Menu-->
-  <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
 
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="assets/img/picture.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
+<a href="#about" class="skip-link">Lompat ke konten</a>
 
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">gozali<span class="dot">.</span>dev</div>
+    <nav class="links" id="navLinks">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">☰</button>
+  </div>
+</header>
 
-      <li class="bold">
-        <!-- mdi-av-web small
-             mdi-av-my-library-books small-->
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
+<main id="about-anchor">
 
-      <li class="bold">
-        <!--
-        ICONS:
-        mdi-action-assessment
-        mdi-social-poll
-        mdi-av-equalizer
-        -->
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      
-      <li class="bold">
-        <!--
-        ICONS:
-        -->
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">tersedia untuk peluang baru</p>
 
-      <li class="bold">
-        <!-- 
-        1. mdi-communication-contacts
-        2. mdi-content-mail
-        3. mdi-communication-email
-        -->
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-        <!--
-        ICONS:
-        1. mdi-action-description
-        2. mdi-file-folder
-        3. mdi-file-folder-open
-        4. mdi-file-attachment
-        5. mdi-file-folder-shared
-        -->
-        <!-- <a aria-label="Open Varad's resume in a new tab" href="#resume" target="_blank"
-          onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Varad's resume in a new tab" href="assets/resume/Resume Ahmad Gozali.pdf" target="_blank"
-        class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Nav class 2 -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Ahmad Gozali</a>
-      <span class="black-text">Web Developer</span>
+      <div class="terminal">
+        <div class="term-bar">
+          <span class="term-dot r"></span>
+          <span class="term-dot y"></span>
+          <span class="term-dot g"></span>
+          <span class="term-title">ahmad@gozali</span>
+        </div>
+        <div class="term-body">
+          <h1 class="title"><span class="who">Ahmad Gozali</span></h1>
+          <p class="role-line" id="roleLine"><span id="roleText"></span><span class="caret"></span></p>
+          <p class="hero-summary">
+            Lulusan Teknik Informatika yang membangun sistem backend dan integrasi API untuk kebutuhan bisnis nyata —
+            mulai dari ERP, payment gateway, hingga aplikasi mobile. Saat ini berbasis di Bekasi Utara.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
+            <a href="assets/resume/CV - Ahmad Gozali.pdf" target="_blank" class="btn btn-ghost">Unduh CV ↓</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/ahmad-gozali-0919a8137/" target="_blank" aria-label="LinkedIn Ahmad Gozali">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 10.27h-3v-4.5c0-1.07-.02-2.45-1.5-2.45-1.5 0-1.73 1.17-1.73 2.38v4.57h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.47 2 3.47 4.59v4.72z"/></svg>
+            </a>
+            <a href="https://github.com/Gozali21" target="_blank" aria-label="GitHub Ahmad Gozali">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.68-1.29-1.68-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.74.4-1.26.72-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.38 23.5 17.07 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+            </a>
+            <a href="mailto:ahmadgozali95@gmail.com" aria-label="Email Ahmad Gozali">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <!-- Nav class 3 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Varad's Resume in a new tab"
-          href="https://drive.google.com/file/d/1B6MZ1z0-7NsefC3Lm_q-uhib28MTqpE9/view?usp=sharing" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Main Content-->
-  <main>
-    <!-- First Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Hai, Saya <span class="teal">Ahmad Gozali.</span></h2>
-              <h5 style="color:#fff">Saya Seorang <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
-              <!-- <h5 style="color:#00796b">A <span class="typing" style="font-weight: 300; color:#fff"></span></h5> -->
-              <!-- <h5>Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and challenging real-world problems.</h5> -->
-              <h5>Semangat mempelajari hal-hal baru tentang teknologi, problem solving, teamwork / individu, dan manajemen waktu</h5>
-              <h5></h5>
-            </div>
-            <div class="social">
-              <a href="https://www.linkedin.com/in/ahmad-gozali-0919a8137/" target="_blank">
-                <button class="icon-btn linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </button>
-              </a>
-              <a href="http://github.com/Gozali21" target="_blank">
-                <button class="icon-btn github">
-                  <i class="fa fa-github"></i>
-                </button>
-              </a>
-            </div>
-            <div class='buttons'>
-              <a href="#about" class="readme">Read More</a>
-              <a href="#contact" class="contactme">Contact Me</a>
-            </div>
-          </div>
-        </div>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">about</h2>
+        <span class="sec-rule"></span>
       </div>
-    </section>
 
-    <!-- Second Section: About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
-        <!-- <blockquote>
-          <h2>
-            A Software Developer with a passion for Backend Development and Artificial Intelligence.
-
-          </h2>
-        </blockquote> -->        
+      <div class="about-text reveal">
         <p>
-          Saya seorang lulusan Teknik Informatika tahun 2023 di salah satu Universitas Swasta di Bekasi dan saat ini saya bekerja sebagai programmer atau web developer di salah satu IT consultant di Jakarta Utara. Pengalaman kerja profesional yang saya miliki membantu saya meningkatkan pengalaman dalam dunia IT khususnya programming. Semangat saya dalam mengembangkan aplikasi adalah membuat aplikasi atau sistem yang kompleks dan dapat digunakan sebagai pemecah suatu masalah bagi user atau pengguna.
+          Saya lulusan <strong>Teknik Informatika</strong> tahun 2023 dari Universitas Bani Saleh, Bekasi, dan sejak
+          Oktober 2019 bekerja sebagai <strong>Programmer / Web Developer</strong> di sebuah IT consultant di
+          Jakarta Utara. Pengalaman ini membentuk cara saya berpikir tentang software: bukan sekadar menulis kode,
+          tapi membangun sistem yang benar-benar menyelesaikan masalah operasional perusahaan.
         </p>
         <p>
+          Fokus saya ada di sisi <strong>backend dan integrasi sistem</strong> — menghubungkan aplikasi internal
+          dengan API pihak ketiga, merancang query database yang efisien, dan menjaga sistem tetap berjalan stabil
+          setelah rilis. Saya nyaman bekerja sendiri maupun dalam tim, dan terbiasa dengan tenggat waktu proyek bisnis.
+        </p>
+        <p>
+          Saat ini saya membuka diri untuk peran baru yang menawarkan jenjang karier yang lebih jelas,
+          tantangan teknis yang lebih besar, dan lingkungan kerja yang profesional untuk terus bertumbuh.
+        </p>
+
+        <div class="stack-grid">
+          <div class="stack-row"><span class="k">languages</span><span class="v">HTML, CSS, JavaScript, PHP, Go</span></div>
+          <div class="stack-row"><span class="k">database</span><span class="v">MySQL</span></div>
+          <div class="stack-row"><span class="k">frameworks</span><span class="v">CodeIgniter, Laravel, CakePHP, React, Tailwind, GIN</span></div>
+          <div class="stack-row"><span class="k">tools</span><span class="v">Git, VS Code, WinSCP, Fork</span></div>
+        </div>
+
+        <p class="status-line">
+          <span class="ok">●</span> status: open to work — domisili Bekasi Utara, siap remote/onsite/hybrid
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">experience</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="job">
+          <div class="job-head">
+            <span class="job-role">Programmer / Web Developer</span>
+            <span class="job-period">Okt 2019 — Sekarang</span>
+          </div>
+          <div class="job-org">PT. Central Data Computindo Global Informatika · Jakarta, Indonesia</div>
           <ul>
-            <li><b>Languages:</b> HTML, CSS, JavaScript, PHP, Go</li>
-            <li><b>Databases:</b> MySQL</li>
-            <li><b>Libraries:</b> jQuery</li>
-            <li><b>Frameworks:</b> CodeIgniter, CakePHP, React, Bootstrap, Tailwind CSS</li>
-            <li><b>Tools:</b> Git, Visual Studio Code, WinSCP, Fork</li>
+            <li>Mengembangkan dan memelihara sistem ERP untuk operasional klien.</li>
+            <li>Membangun integrasi API antar sistem, termasuk dokumentasinya.</li>
+            <li>Menambahkan fitur baru dan melakukan bug fixing pada sistem yang berjalan.</li>
+            <li>Merancang dan mengoptimalkan query database untuk kebutuhan reporting dan transaksi.</li>
           </ul>
-          
-        </p>
-        <p>
-          Saat ini saya sedang mencari peluang lebih baik untuk bekerja di posisi yang lebih baik dan yang lebih tertantang dengan keahlian yang saya miliki, yang memberikan pengembangan atau jenjang karir yang lebih baik, pertumbuhan pribadi atau keahlian dan pengalaman yang menarik, dan lingkungan kerja yang profesional.
-        </p>
-        <!-- <p>
-          Another Paragraph
-        </p>  -->
-        <!-- <p>
-        <strong>Current Focus</strong>:&nbsp;<a aria-label="Navigate to the Inclusive Design Patterns homepage"
-          href="https://www.smashingmagazine.com/inclusive-design-patterns/">Accessibility</a>&nbsp;//&nbsp;<a
-          aria-label="Navigate to the Full Stack React homepage"
-          href="https://www.fullstackreact.com/">React</a>&nbsp;//&nbsp;<a
-          aria-label='Navigate to the article "Scalable CSS"'
-          href="https://mrmrs.github.io/writing/2016/03/24/scalable-css/">Design Systems</a>
-        </p> -->
-      </div>
-    </section>
-
-
-    <!-- Third Section: Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
-      <div class="container">
-
-        <!-- Latest Experience -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-              </div>
-              <!-- <div class="col s12 m10"> -->
-              <div class="col s12 m10">
-                  <span class="card-title"><p class="teal-text hoverline">PT. Central Data Computindo Global Informatika</p></span>
-              </div>
-            </div>
-            <p class="teal-text">Programmer / Web Developer</p>
-            <ul>
-              <li>Development sistem ERP</li>
-              <li>Integrasi dan dokumentasi API</li>
-              <li>Update atau penambahan fitur pada sistem.</li>
-              <li>Bug Fix.</li>
-              <li>Query Database.</li>
-              <li>
-                <b>Tools:</b> PHP, Javasript, Bootstrap, MySQL
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Oktober 2019 - Saat ini | Jakarta, Indonesia</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Fourth Section: Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="pooling dealer - leasing" src="assets/img/Portfolio-Pooling_Leasing.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Sistem Pooling Dealer - Leasing<i class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Integrasi pooling order dari pihak dealer ke leasing
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, PHP, JavaScript, Bootstrap, MySQL</li>
-                  <li>Login untuk mendapatkan akses token menggunakan OAuth token.</li>
-                  <li>Pengajuan kredit ke leasing menggunakan API.</li>
-                  <li>Realtime update status proses kredit dari leasing.</li>
-                </ul>
-
-                <!-- <div class="card-action">
-                  <a aria-label="Visit " href="#" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="#"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="integrasi payment" src="assets/img/Portfolio-payment_paydia.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Integrasi Sistem Payment<i class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Integrasi sistem payment scan QR
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, PHP, JavaScript, Bootstrap, MySQL</li>
-                  <li>Tampilan QR code dari Google.</li>
-                  <li>Generate, View, Time Expired QR.</li>
-                  <li>Cek status pembayaran.</li>
-                  <li>Realtime update status pembayaran.</li>
-                </ul>
-
-                <!-- <div class="card-action">
-                  <a aria-label="Visit " href="#" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="#"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="pendaftaran pasien" src="assets/img/Portfolio-antrian1.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Sistem Pendaftaran Pasien<i class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Sistem Pendaftaran Pasien Klinik
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, PHP, JavaScript, Bootstrap, MySQL</li>
-                  <li>Update status antrian.</li>
-                  <li>Pemanggilan pasien.</li>
-                  <li>Pembatalan pendaftaran pasien.</li>
-                </ul>
-
-                <!-- <div class="card-action">
-                  <a aria-label="Visit " href="#" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="#"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="integration mobile - Citradatacontruction" src="assets/img/Project - integrasi mobile citradatacontruction1.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Mobile System<i class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Integration Web Base System to Mobile System - Citradatacontruction
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> PHP (CodeIgniter 3), Kotlin</li>
-                  <li>Auth User dan Akses Token (Phase 1).</li>
-                  <li>Menampilkan Data Master (Phase 1).</li>
-                  <li>Menampilkan Data List Project Dan Detail Project (Phase 1).</li>
-                  <li>Menampilkan Data Wilayah - Provinsi dan Kota (Phase 1).</li>
-                </ul>
-
-                <!-- <div class="card-action">
-                  <a aria-label="Visit " href="#" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="#"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="system control manufacturing dies - MTM" src="assets/img/Project - MTM.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">System Kontrol Manufacturing Dies<i class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Web Application System Kontrol Manufacturing Dies - MTM
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, PHP (CodeIgniter 4), JavaScript, Bootstrap, MySQL</li>
-                  <li>Create Dashboard.</li>
-                  <li>Data Master (Master Raw Material, Master Dies, Master Subcont, Master Mesin).</li>
-                  <li>Report.</li>
-                </ul>
-
-                <!-- <div class="card-action">
-                  <a aria-label="Visit " href="#" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="#"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                   class="fa fa-github"></i></a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-
-    <!-- Fifth Section: Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Skills</h3>
-      <div class="container">
-        <!-- Languages and Databases -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Languages and Databases</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/html5.jpg" class="responsive-img" /><br>HTML5
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/css3.jpg" class="responsive-img" /><br>CSS3
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/JavaScript.png" class="responsive-img" /><br>JavaScript
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/php.png" class="responsive-img" /><br>PHP
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/Golang.png" class="responsive-img" /><br>Go
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/MySQL.png" class="responsive-img" /><br>MySQL
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Libraries</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/jQuery.png" class="responsive-img" /><br>jQuery
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Frameworks -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Frameworks</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/CodeIgniter.png" class="responsive-img" /><br>CodeIgniter
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/cakephp.png" class="responsive-img" /><br>CakePHP
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/React.png" class="responsive-img" /><br>React
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/Bootstrap.png" class="responsive-img" /><br>Bootstrap
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/TailwindCSS.png" class="responsive-img" /><br>Tailwind CSS
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Other -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Other</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/GIT.png" class="responsive-img" /><br>Git
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/Visual_Studio_Code.png" class="responsive-img" /><br>Visual Studio Code
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/WinSCP.png" class="responsive-img" /><br>WinSCP
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="assets/img/fork.png" class="responsive-img" /><br>Fork
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- certifications -->
-        <!-- <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Certificates</h4>
-            <div class="row text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="assets/img/mooc-machine-learning-coursera-800x500.jpg">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text">Machine Learning (Stanford)</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="assets/img/mooc-algorithms-stanford-2-800x500.jpg">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text">Algorithms (Stanford)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
-    </section>
-
-    <!-- Seventh Section: Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
-          <!-- Education -->
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.smktarunabangsa.sch.id/" target="_blank" class="teal-text hoverline">SMK Taruna Bangsa</a></span>
-                </p>
-                <p class="brown-text">Perwira, Bekasi Utara</p>
-                <p>
-                  <b>Jenjang: </b>SMK Otomotif
-                  <br>
-                  <b>GPA: </b>2.7/3.0
-                </p>
-
-                <!-- <ul>
-                  <p>
-                    <b>Relevant Courseworks:</b>
-                  <ul>
-                    <li>Distributed Database Systems</li>
-                    <li>Cloud Computing</li>
-                    <li>Foundations of Algorithms</li>                    
-                  </ul>
-                  </p>
-                </ul> -->
-              </div>
-            </div>
-
-            
-          </div>
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://ubs.ac.id/Statis/lihat/teknik-informatika" target="_blank" class="teal-text hoverline">Universitas Bani Saleh</a></span>
-                </p>
-                <p class="brown-text">Margahayu, Bekasi Timur</p>
-                <p>
-                  <b>Jenjang: </b>S1 Teknik Informatika
-                  <br>
-                  <b>GPA: </b>3.12/4.00
-                </p>
-
-                <!-- <ul>
-                  <p>
-                    <b>Relevant Courseworks:</b>
-                  <ul>
-                    <li>Data Structures and Algorithms</li>
-                    <li>Database Management Systems</li>
-                    <li>Operating Systems</li>
-                    <li>Machine Learning</li>
-                    <li>Computer Vision</li>
-                  </ul>
-                  </p>
-                </ul> -->
-              </div>
-            </div>
+          <div class="tools">
+            <span>PHP</span><span>Go</span><span>JavaScript</span><span>Bootstrap</span><span>MySQL</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Eight Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
-        <p>
-          <a aria-label="Call Varad" data-position="top" data-tooltip="Call Varad"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
-              aria-label="Call Varad">+6281283660536</a></a>
-        </p>
-        <p>
-          <a aria-label="Email Gozali" href="mailto:ahmadgozali95@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Gozali" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Gozali" href="mailto:ahmadgozali95@gmail.com"
-              class="hoverline">ahmadgozali95@gmail.com</a></a>
-        </p>
-        <p>
-          <a aria-label="View Varad on GitHub" href="http://github.com/Gozali21" target="_blank"
-            data-position="top" data-tooltip="View Varad on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="Varad on Github" href="http://github.com/Gozali21" class="hoverline"
-              target="_blank">github.com/Gozali21</a></a>
-        </p>
-        <p>
-          <a aria-label="View Varad on LinkedIn" href="https://www.linkedin.com/in/ahmad-gozali-0919a8137/" target="_blank"
-            data-position="top" data-tooltip="View Varad on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Varad on LinkedIn" href="https://www.linkedin.com/in/ahmad-gozali-0919a8137/"
-              class="hoverline" target="_blank">linkedin.com/in/ahmad-gozali</a></a>
-        </p>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">projects</h2>
+        <span class="sec-rule"></span>
       </div>
-    </section>
-  </main>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Programmer / Web Developer", "Fast Learner"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
+      <div class="proj-list reveal">
+
+        <div class="proj">
+          <div class="proj-top" onclick="toggleProj(this)">
+            <div>
+              <p class="proj-name">Sistem Pooling Dealer – Leasing</p>
+              <p class="proj-desc">Integrasi pengajuan kredit dari dealer ke pihak leasing.</p>
+            </div>
+            <span class="proj-toggle">+</span>
+          </div>
+          <div class="proj-details">
+            <div class="proj-details-inner">
+              <ul>
+                <li>Autentikasi akses menggunakan OAuth token.</li>
+                <li>Pengajuan kredit ke leasing melalui API.</li>
+                <li>Update status proses kredit secara realtime.</li>
+              </ul>
+              <div class="proj-tools">
+                <span>HTML</span><span>CSS</span><span>PHP</span><span>JavaScript</span><span>Bootstrap</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top" onclick="toggleProj(this)">
+            <div>
+              <p class="proj-name">Integrasi Sistem Payment</p>
+              <p class="proj-desc">Integrasi sistem pembayaran berbasis scan QR.</p>
+            </div>
+            <span class="proj-toggle">+</span>
+          </div>
+          <div class="proj-details">
+            <div class="proj-details-inner">
+              <ul>
+                <li>Generate dan tampilan QR code beserta waktu kedaluwarsa.</li>
+                <li>Pengecekan status pembayaran secara otomatis.</li>
+                <li>Update status pembayaran secara realtime.</li>
+              </ul>
+              <div class="proj-tools">
+                <span>HTML</span><span>CSS</span><span>PHP</span><span>JavaScript</span><span>Bootstrap</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top" onclick="toggleProj(this)">
+            <div>
+              <p class="proj-name">Sistem Pendaftaran Pasien</p>
+              <p class="proj-desc">Sistem antrian dan pendaftaran pasien untuk klinik.</p>
+            </div>
+            <span class="proj-toggle">+</span>
+          </div>
+          <div class="proj-details">
+            <div class="proj-details-inner">
+              <ul>
+                <li>Update status antrian secara langsung.</li>
+                <li>Pemanggilan pasien sesuai urutan.</li>
+                <li>Pembatalan pendaftaran pasien.</li>
+              </ul>
+              <div class="proj-tools">
+                <span>HTML</span><span>CSS</span><span>PHP</span><span>JavaScript</span><span>Bootstrap</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top" onclick="toggleProj(this)">
+            <div>
+              <p class="proj-name">Mobile System Integration — Citra Data Construction</p>
+              <p class="proj-desc">Integrasi sistem berbasis web ke aplikasi mobile.</p>
+            </div>
+            <span class="proj-toggle">+</span>
+          </div>
+          <div class="proj-details">
+            <div class="proj-details-inner">
+              <ul>
+                <li>Autentikasi user dan pengelolaan akses token (Fase 1).</li>
+                <li>Menampilkan data master dan detail proyek.</li>
+                <li>Menampilkan data wilayah (provinsi dan kota).</li>
+              </ul>
+              <div class="proj-tools">
+                <span>PHP (CodeIgniter 3)</span><span>Kotlin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-top" onclick="toggleProj(this)">
+            <div>
+              <p class="proj-name">Sistem Kontrol Manufacturing Dies — MTM</p>
+              <p class="proj-desc">Aplikasi web untuk kontrol manufaktur dies.</p>
+            </div>
+            <span class="proj-toggle">+</span>
+          </div>
+          <div class="proj-details">
+            <div class="proj-details-inner">
+              <ul>
+                <li>Membangun dashboard utama sistem.</li>
+                <li>Data master: bahan baku, dies, subkontraktor, dan mesin.</li>
+                <li>Modul reporting untuk kebutuhan operasional.</li>
+              </ul>
+              <div class="proj-tools">
+                <span>HTML</span><span>CSS</span><span>PHP (CodeIgniter 4)</span><span>JavaScript</span><span>Bootstrap</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">skills</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="skills-grid reveal">
+        <div class="skill-card">
+          <h4>Languages & DB</h4>
+          <div class="skill-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>Go</span><span>MySQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Frameworks</h4>
+          <div class="skill-tags">
+            <span>CodeIgniter</span><span>Laravel</span><span>CakePHP</span><span>React</span><span>Bootstrap</span><span>Tailwind CSS</span><span>GIN</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Libraries</h4>
+          <div class="skill-tags">
+            <span>jQuery</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Tools</h4>
+          <div class="skill-tags">
+            <span>Git</span><span>VS Code</span><span>WinSCP</span><span>Fork</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">05</span>
+        <h2 class="sec-title">education</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <div class="reveal">
+        <div class="edu-card">
+          <p class="edu-school">Universitas Bani Saleh</p>
+          <p class="edu-loc">Margahayu, Bekasi Timur</p>
+          <div class="edu-meta">
+            <span><b>Jenjang:</b> S1 Teknik Informatika</span>
+            <span><b>IPK:</b> 3.12 / 4.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">06</span>
+        <h2 class="sec-title">contact</h2>
+        <span class="sec-rule"></span>
+      </div>
+
+      <p class="reveal" style="color:var(--text-dim); font-size:15px; margin-bottom:24px;">
+        Sedang mencari kandidat dengan latar belakang backend/web development? Saya terbuka untuk diskusi
+        peluang kerja maupun proyek lepas.
+      </p>
+
+      <div class="contact-grid reveal">
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Telepon</p>
+            <p class="contact-value"><a href="tel:+6281283660536">+62 812-8366-0536</a></p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <p class="contact-value"><a href="mailto:ahmadgozali95@gmail.com">ahmadgozali95@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.68-1.29-1.68-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.74.4-1.26.72-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.78 1.08.78 2.18v3.23c0 .3.21.66.79.55C20.21 21.38 23.5 17.07 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">GitHub</p>
+            <p class="contact-value"><a href="https://github.com/Gozali21" target="_blank">github.com/Gozali21</a></p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 10.27h-3v-4.5c0-1.07-.02-2.45-1.5-2.45-1.5 0-1.73 1.17-1.73 2.38v4.57h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.47 2 3.47 4.59v4.72z"/></svg>
+          </div>
+          <div>
+            <p class="contact-label">LinkedIn</p>
+            <p class="contact-value"><a href="https://www.linkedin.com/in/ahmad-gozali-0919a8137/" target="_blank">linkedin.com/in/ahmad-gozali</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta reveal">
+        <a href="mailto:ahmadgozali95@gmail.com" class="btn btn-primary">Kirim Email →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Ahmad Gozali.
+</footer>
+
+<script>
+  // typing effect
+  (function(){
+    var roles = ["Programmer / Web Developer", "Backend Enthusiast", "Pembelajar Cepat"];
+    var el = document.getElementById('roleText');
+    var ri = 0, ci = 0, deleting = false;
+
+    function tick(){
+      var current = roles[ri];
+      if(!deleting){
+        ci++;
+        el.textContent = current.slice(0, ci);
+        if(ci === current.length){
+          deleting = true;
+          setTimeout(tick, 1600);
+          return;
+        }
+      } else {
+        ci--;
+        el.textContent = current.slice(0, ci);
+        if(ci === 0){
+          deleting = false;
+          ri = (ri + 1) % roles.length;
+        }
+      }
+      setTimeout(tick, deleting ? 35 : 65);
+    }
+    tick();
+  })();
+
+  // mobile nav toggle
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+  });
+
+  // active link on scroll
+  var sections = document.querySelectorAll('main section[id]');
+  var navAnchors = document.querySelectorAll('nav.links a');
+  function onScroll(){
+    var current = '';
+    sections.forEach(function(sec){
+      var rect = sec.getBoundingClientRect();
+      if(rect.top <= 90 && rect.bottom > 90){ current = sec.id; }
     });
-  </script>
+    navAnchors.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
 
+  // reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.12 });
+  revealEls.forEach(function(el){ io.observe(el); });
 
-  <!-- jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  // project accordion
+  function toggleProj(headerEl){
+    var proj = headerEl.closest('.proj');
+    var wasOpen = proj.classList.contains('open');
+    document.querySelectorAll('.proj.open').forEach(function(p){ p.classList.remove('open'); });
+    if(!wasOpen){ proj.classList.add('open'); }
+  }
+</script>
 
-  <!-- Materialize - Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-  <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy()
-      // Initialize collapse button
-      $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      })
-    })
-  </script>
 </body>
-
 </html>
